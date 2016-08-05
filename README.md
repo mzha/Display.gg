@@ -35,21 +35,28 @@ being given to more recent games.
 Download and unzip the ZIP file or clone the project into a directory of your choice. Rename to "DisplayGG" or
 whatever name you want.
 
-Make sure you have Python 2.7 installed on your computer. The easiest way to check is to go to Terminal and entering
-"python" (without quotes). If it says "command does not exist" or displays a version lower than 2.7, install the latest 2.x from
+Make sure you have Python 3.x installed on your computer. The easiest way to check is to go to Terminal and entering:
+
+`python3`
+
+If it says "command does not exist" or displays a version lower than 3, install the latest 3.x from
 [here](https://www.python.org/downloads/).
 
-Make sure you have pip by entering the command "pip" (without quotes) into Terminal. If it
+Make sure you have pip by entering the command
+
+`pip3`
+
+into Terminal. If it
 gives you a long list of commands, you have it. If not, follow the instructions [here](https://pip.pypa.io/en/stable/installing/).
 
 Navigate to the DisplayGG folder in Terminal (For example, if it is in Downloads/DisplayGG, enter "cd ~/Downloads/DisplayGG"). Now enter the following commands (if it prompts you for
   your password, enter it because it needs admin permissions to install):
 
-`sudo pip install psutil`
+`sudo pip3 install psutil`
 
-`sudo pip install --upgrade --trusted-host wxpython.org --pre -f http://wxpython.org/Phoenix/snapshot-builds/ wxPython_Phoenix`
+`sudo pip3 install --upgrade --trusted-host wxpython.org --pre -f http://wxpython.org/Phoenix/snapshot-builds/ wxPython_Phoenix`
 
-`sudo pip install appscript`
+`sudo pip3 install appscript`
 
 Go to [league's developer website](https://developer.riotgames.com/) and sign in with your league account.
 
@@ -69,10 +76,10 @@ recommended because it will cause visual clashes.
 ### Running Instructions
 In Terminal, from the DisplayGG folder, run this command, replacing x with 0 if you're on Windows, or 1 if you're on Mac:
 
-`python script.py x`
+`python3 script.py x`
 
 You can put a summoner name in quotes afterwards if you want the program to load data for a different summoner, like so:
 
-`python script.py x 'SUMMONERNAME'`
+`python3 script.py x 'SUMMONERNAME'`
 
 Now the program is running and will automatically open when you load into game. You can exit the program from the Terminal window by pressing Ctrl-C.

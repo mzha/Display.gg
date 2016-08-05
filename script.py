@@ -1,4 +1,5 @@
-import psutil, sys, wx, urllib2, StringIO, time, json, appscript
+import psutil, sys, wx, urllib.request,time, json, appscript
+import io
 from riotwatcher import RiotWatcher, NORTH_AMERICA
 
 with open('config.json') as config_file:
@@ -283,8 +284,8 @@ def getPlayer(player):
 
 #Parses url and returns image
 def getImage(url):
-    buf = urllib2.urlopen(url).read()
-    sbuf = StringIO.StringIO(buf)
+    buf = urllib.request.urlopen(url).read()
+    sbuf = io.BytesIO(buf)
     return wx.Image(sbuf)
 
 #Helper function to get runes and open new frame
