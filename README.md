@@ -18,7 +18,7 @@ A loading screen display for League of Legends. <font color="red">(CURRENTLY MAC
 - Rank
 - Runes
 - Average ranked KDA
-- Winrate
+- Win Rate
 - Ranked games on champion
 - Player skill
 - Tilt factor
