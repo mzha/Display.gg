@@ -1,0 +1,18 @@
+{
+    "champion_image_size": 50,
+    "wrap_width": 20,
+    "left_padding": 10,
+    "gap": 5,
+    "colors":
+        {
+            "text_color": "#3B3B3B",
+            "title_color": "#064200",
+            "lighter_text_color": "#6E6E6E",
+            "lighter_blue": "#D9FBFF",
+            "light_blue": "#CEEEF2",
+            "lighter_red": "#FFD6D6",
+            "light_red": "#F2CECE",
+            "runepage_color": "#303030"
+        },
+    "process_name": "Safari"
+}
