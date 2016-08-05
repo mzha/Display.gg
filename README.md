@@ -32,7 +32,8 @@ Tilt factor measures the player's tilt on a scale from **0.0** (untilted) to **1
 It is a custom calculation made by analyzing their win-loss record from the past **10** matched games, with more weight
 being given to more recent games.
 ### Installation instructions
-Download and unzip the ZIP file or clone the project into a directory of your choice.
+Download and unzip the ZIP file or clone the project into a directory of your choice. Rename to "DisplayGG" or
+whatever name you want.
 
 Make sure you have Python 2.7 installed on your computer. The easiest way to check is to go to Terminal and entering
 "python" (without quotes). If it says "command does not exist" or displays a version lower than 2.7, install the latest 2.x from
