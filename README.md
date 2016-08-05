@@ -21,7 +21,7 @@ A loading screen display for League of Legends. <font color="red">(CURRENTLY MAC
 - Win Rate
 - Ranked games on champion
 - Player skill
-- Tilt factor
+- Tilt factor (Tilt)
 
 ### Player skill? Tilt factor?
 Player skill is split into three categories: ***ONE TRICK***, ***NOOB***, and ***NORMAL***. If there is nothing on top of the summoner
