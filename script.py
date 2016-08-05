@@ -10,9 +10,17 @@ with open('constants.json') as constants_file:
 #Summoner name constant
 name = config['summoner_name']
 
+#Windows or Mac
+osValue = 0
+
+if len(sys.argv) < 2 or sys.argv[1] not in ['0', '1']:
+    raise ValueError('Need more arguments in command line')
+else:
+    osValue = int(sys.argv[1])
+
 #Summoner name from command line, overrides name above
-if len(sys.argv) > 1:
-    name = sys.argv[1]
+if len(sys.argv) > 2:
+    name = sys.argv[2]
 
 #Dev only
 timeTaken = 0
@@ -328,8 +336,11 @@ class MainFrame(wx.Frame):
 
         #Get game mode
         gameMode = game['gameMode']
-        if game['gameQueueConfigId'] in [4, 6, 9, 41, 42, 410]:
-            gameMode = "RANKED"
+        try:
+            if game['gameQueueConfigId'] in [4, 6, 9, 41, 42, 410]:
+                gameMode = "RANKED"
+        except:
+            pass
         title = wx.StaticText(panel, label=gameMode, pos=(width / 2 - 110, height / 14))
         title.SetFont(titleFont)
         title.SetForegroundColour(titleColor)
@@ -433,7 +444,8 @@ class MainFrame(wx.Frame):
 
         closeButton = wx.StaticBitmap(panel, -1, closeButtonImage, (0, 0), (40, 40))
         closeButton.Bind(wx.EVT_LEFT_DOWN, self.close)
-        appscript.app(pid=processId).activate()
+        if osValue == 1:
+            appscript.app(pid=processId).activate()
     def close(self, event):
         self.Close()
     #Draw background image

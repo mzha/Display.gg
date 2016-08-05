@@ -67,12 +67,12 @@ recommended because it will cause visual clashes.
 
 <font color="blue">Congratulations! Display.gg is installed!</font>
 ### Running Instructions
-In Terminal, from the DisplayGG folder, run this command:
+In Terminal, from the DisplayGG folder, run this command, replacing x with 0 if you're on Windows, or 1 if you're on Mac:
 
-`python script.py`
+`python script.py x`
 
 You can put a summoner name in quotes afterwards if you want the program to load data for a different summoner, like so:
 
-`python script.py 'SUMMONERNAME'`
+`python script.py x 'SUMMONERNAME'`
 
 Now the program is running and will automatically open when you load into game. You can exit the program from the Terminal window by pressing Ctrl-C.
