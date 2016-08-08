@@ -73,7 +73,7 @@ Navigate to the DisplayGG folder in Command Prompt (For example, if it is in Dow
 
 `pip3 install appscript`
 
-Go to [League of Legends's developer website](https://developer.riotgames.com/) and sign in with your League of Legends account.
+Go to [League of Legends' developer website](https://developer.riotgames.com/) and sign in with your League of Legends account.
 
 Follow the on-screen instructions
 until you reach a screen that displays your "Development API Key". It will be a line of numbers, letters, and dashes.
@@ -130,7 +130,7 @@ Navigate to the DisplayGG folder in Terminal (For example, if it is in Downloads
 
 `sudo pip3 install appscript`
 
-Go to [League of Legends's developer website](https://developer.riotgames.com/) and sign in with your League of Legends account.
+Go to [League of Legends' developer website](https://developer.riotgames.com/) and sign in with your League of Legends account.
 
 Follow the on-screen instructions
 until you reach a screen that displays your "Development API Key". It will be a line of numbers, letters, and dashes.
