@@ -11,10 +11,11 @@
 		- [Player skill? Tilt factor?](#player-skill-tilt-factor)
 		- [Installation instructions](#installation-instructions)
 		- [Running Instructions](#running-instructions)
-### <a name="displaygg"></a>What is Display.gg?
+    
+### <a name="what-is-displaygg"></a>What is Display.gg?
 A loading screen display for League of Legends. <font color="red">(CURRENTLY MAC ONLY)</font>
 <img src='http://oi68.tinypic.com/b4yfq9.jpg' alt='Demo'></img>
-### <a name="what-is-displaygg"></a>More Details
+### <a name="more-details"></a>More Details
 <font color="lightblue">Display.gg</font> is a python script that you keep running on your computer. It detects when you are loading into a game and pulls up the game's details.
 ### <a name="information-displayed"></a>Information Displayed
 - Game type
