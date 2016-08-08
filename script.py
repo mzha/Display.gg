@@ -447,8 +447,10 @@ class MainFrame(wx.Frame):
         closeButton.Bind(wx.EVT_LEFT_DOWN, self.close)
         if osValue == 1:
             appscript.app(pid=processId).activate()
+
     def close(self, event):
         self.Close()
+
     #Draw background image
     def OnEraseBackground(self, evt):
         dc = evt.GetDC()
@@ -482,7 +484,7 @@ while True:
             if processName == pinfo:
                 thisCycle = True
                 if not exists:
-                    timeTaken = millis = int(round(time.time() * 1000))
+                    timeTaken = int(round(time.time() * 1000))
                     f = MainFrame()
                     app.MainLoop()
                 exists = True
@@ -490,5 +492,6 @@ while True:
             pass
     if not thisCycle and exists:
         exists = False
+        f.Close()
 
     time.sleep(2)

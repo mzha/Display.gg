@@ -4,6 +4,13 @@
   </font>
 </h1>
 
+- [        Display.gg  ](#)
+		- [What is Display.gg?](#)
+		- [More Details](#)
+		- [Information Displayed](#)
+		- [Player skill? Tilt factor?](#)
+		- [Installation instructions](#)
+		- [Running Instructions](#)
 ### What is Display.gg?
 A loading screen display for League of Legends. <font color="red">(CURRENTLY MAC ONLY)</font>
 <img src='http://oi68.tinypic.com/b4yfq9.jpg' alt='Demo'></img>
@@ -31,7 +38,7 @@ champion, while ***NOOB*** means they have played less than **2.5%** of their ra
 Tilt factor measures the player's tilt on a scale from **0.0** (untilted) to **10.0** (extremeley tilted).
 It is a custom calculation made by analyzing their win-loss record from the past **10** matched games, with more weight
 being given to more recent games.
-### Installation instructions
+### Installation Instructions
 Download and unzip the ZIP file or clone the project into a directory of your choice. Rename to "DisplayGG" or
 whatever name you want.
 
@@ -69,17 +76,20 @@ around it.
 It is recommended that you use a smurf or create a new league account and repeat this process for a second
 API key and put it where it says "PUT API KEY 2 HERE". It will halve the amount of time it takes to load the information.
 
-Now change the other values in the config.json file. Where it says "Omega Rex", enter your summoner name with quotes around it. You can play around with the scale_factor until you find one that suits your tastes. Going under 6 is not
-recommended because it will cause visual clashes.
+Now change the other values in the config.json file. Where it says "Omega Rex", enter your summoner name with quotes around it. You can play around with the scale_factor until you find one that suits your tastes.
+*Going under 6 is not
+recommended because it will cause visual clashes!*
 
-<font color="blue">Congratulations! Display.gg is installed!</font>
+<font color="blue">**Congratulations! Display.gg is installed!**</font>
 ### Running Instructions
-In Terminal, from the DisplayGG folder, run this command, replacing x with 0 if you're on Windows, or 1 if you're on Mac:
+In Terminal, from the DisplayGG folder, run this command.
+
+Replace x with 0 if you're on Windows, or 1 if you're on Mac:
 
 `python3 script.py x`
 
-You can put a summoner name in quotes afterwards if you want the program to load data for a different summoner, like so:
+You can put a summoner name in double-quotes afterwards if you want the program to load data for a summoner other than the one in your config.json, like so:
 
-`python3 script.py x 'SUMMONERNAME'`
+`python3 script.py x "SUMMONERNAME"`
 
 Now the program is running and will automatically open when you load into game. You can exit the program from the Terminal window by pressing Ctrl-C.
