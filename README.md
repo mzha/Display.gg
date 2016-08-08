@@ -4,19 +4,19 @@
   </font>
 </h1>
 
-- [        Display.gg  ](#)
-		- [What is Display.gg?](#)
-		- [More Details](#)
-		- [Information Displayed](#)
-		- [Player skill? Tilt factor?](#)
-		- [Installation instructions](#)
-		- [Running Instructions](#)
-### What is Display.gg?
+- [        Display.gg  ](#display.gg)
+		- [What is Display.gg?](#what-is-display.gg?)
+		- [More Details](#more-details)
+		- [Information Displayed](#information-displayed)
+		- [Player skill? Tilt factor?](#player-skill-tilt-factor)
+		- [Installation instructions](#installation-instructions)
+		- [Running Instructions](#running-instructions)
+### <a name="display.gg"></a>What is Display.gg?
 A loading screen display for League of Legends. <font color="red">(CURRENTLY MAC ONLY)</font>
 <img src='http://oi68.tinypic.com/b4yfq9.jpg' alt='Demo'></img>
-### More Details
+### <a name="what-is-display.gg?"></a>More Details
 <font color="lightblue">Display.gg</font> is a python script that you keep running on your computer. It detects when you are loading into a game and pulls up the game's details.
-### Information Displayed
+### <a name="information-displayed"></a>Information Displayed
 - Game type
 - Summoner name
 - Champion
@@ -30,7 +30,7 @@ A loading screen display for League of Legends. <font color="red">(CURRENTLY MAC
 - Player skill
 - Tilt factor (Tilt)
 
-### Player skill? Tilt factor?
+### <a name="player-skill-tilt-factor"></a>Player skill? Tilt factor?
 Player skill is split into three categories: ***ONE TRICK***, ***NOOB***, and ***NORMAL***. If there is nothing on top of the summoner
 name, their skill level is ***NORMAL***. ***ONE TRICK*** means they have played at least **50%** of their ranked games with that
 champion, while ***NOOB*** means they have played less than **2.5%** of their ranked games with that champion.
@@ -38,7 +38,7 @@ champion, while ***NOOB*** means they have played less than **2.5%** of their ra
 Tilt factor measures the player's tilt on a scale from **0.0** (untilted) to **10.0** (extremeley tilted).
 It is a custom calculation made by analyzing their win-loss record from the past **10** matched games, with more weight
 being given to more recent games.
-### Installation Instructions
+### <a name="installation-instructions"></a>Installation Instructions
 Download and unzip the ZIP file or clone the project into a directory of your choice. Rename to "DisplayGG" or
 whatever name you want.
 
@@ -81,7 +81,7 @@ Now change the other values in the config.json file. Where it says "Omega Rex", 
 recommended because it will cause visual clashes!*
 
 <font color="blue">**Congratulations! Display.gg is installed!**</font>
-### Running Instructions
+### <a name="running-instructions"></a>Running Instructions
 In Terminal, from the DisplayGG folder, run this command.
 
 Replace x with 0 if you're on Windows, or 1 if you're on Mac:
