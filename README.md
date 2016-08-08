@@ -1,4 +1,4 @@
-#### <a name="displaygg"></a>Display.gg
+## <a name="displaygg"></a>Display.gg
 
 ### Table of Contents
 
@@ -42,7 +42,7 @@ Tilt factor measures the player's tilt on a scale from **0.0** (untilted) to **1
 It is a custom calculation made by analyzing their win-loss record from the past **10** matched games, with more weight
 being given to more recent games.
 
-#### <a name="windows"></a> Windows Instructions
+## <a name="windows"></a> Windows Instructions
 
 ### <a name="installation-instructions-windows"></a>Installing
 Download and unzip the ZIP file or clone the project into a directory of your choice. Rename the folder to "DisplayGG" or whatever name you want.
@@ -51,8 +51,12 @@ Make sure you have Python 3.x installed on your computer. The easiest way to che
 
 `python3`
 
-If it says "command does not exist" or displays a version lower than 3, install the latest 3.x from
-[here](https://www.python.org/downloads/).
+or
+
+`python`
+
+If both say either "command does not exist" or a version lower than 3, install the latest 3.x from
+[here](https://www.python.org/downloads/). Remember which of the two commands worked, because you will need it later.
 
 Make sure you have pip by entering the command
 
@@ -87,17 +91,19 @@ recommended because it will cause visual clashes!*
 
 <font color="blue">**Congratulations! Display.gg is installed!**</font>
 ### <a name="running-instructions-windows"></a>Running
+*Replace `x` with either `python` or `python3` depending on which command worked when you were checking your Python version earlier*
+
 In Command Prompt, from the DisplayGG folder, run this command:
 
-`python3 script.py 0`
+`x script.py 0`
 
 You can put a summoner name in double-quotes afterwards if you want the program to load data for a summoner other than the one in your config.json, like so:
 
-`python3 script.py 0 "SUMMONERNAME"`
+`x script.py 0 "SUMMONERNAME"`
 
 Now the program is running and will automatically open when you load into game. You can exit the program from the Command Prompt window by pressing Ctrl-C.
 
-#### <a name="mac"></a> Mac Instructions
+## <a name="mac"></a> Mac Instructions
 
 ### <a name="installation-instructions-mac"></a>Installing
 Download and unzip the ZIP file or clone the project into a directory of your choice. Rename the folder to "DisplayGG" or whatever name you want.
