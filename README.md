@@ -20,17 +20,17 @@ A loading screen display for League of Legends. <font color="red">(CURRENTLY MAC
 ### <a name="more-details"></a>More Details
 <font color="lightblue">Display.gg</font> is a python script that you keep running on your computer. It detects when you are loading into a game and pulls up the game's details.
 ### <a name="information-displayed"></a>Information Displayed
-- Game type
+- Game type (CLASSIC, RANKED, ARAM, etc.)
 - Summoner name
 - Champion
 - Summoner spells
 - Keystone mastery
-- Rank
+- Current season rank
 - Runes
-- Average ranked KDA
-- Win Rate
+- Average ranked KDA on champion
+- Win Rate on champion
 - Ranked games on champion
-- Player skill
+- Player skill on champion
 - Tilt factor (Tilt)
 
 ### <a name="player-skill-tilt-factor"></a>Player skill? Tilt factor?
@@ -38,9 +38,8 @@ Player skill is split into three categories: ***ONE TRICK***, ***NOOB***, and **
 name, their skill level is ***NORMAL***. ***ONE TRICK*** means they have played at least **50%** of their ranked games with that
 champion, while ***NOOB*** means they have played less than **2.5%** of their ranked games with that champion.
 
-Tilt factor measures the player's tilt on a scale from **0.0** (untilted) to **10.0** (extremeley tilted).
-It is a custom calculation made by analyzing their win-loss record from the past **10** matched games, with more weight
-being given to more recent games.
+Tilt factor measures the player's tilt on a scale from **0.0** (not tilted) to **10.0** (extremely tilted).
+It is calculated by an algorithm that analyzes their record from the past **10** matched games.
 
 ## <a name="windows"></a> Windows Instructions
 
@@ -56,7 +55,7 @@ or
 `python`
 
 If both say either "command does not exist" or a version lower than 3, install the latest 3.x from
-[here](https://www.python.org/downloads/). Remember which of the two commands worked, because you will need it later.
+[here](https://www.python.org/downloads/). *Remember which of the two commands worked, because you will need it later.*
 
 Make sure you have pip by entering the command
 
