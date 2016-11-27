@@ -84,7 +84,7 @@ around it.
 It is recommended that you use a smurf or create a new League of Legends account and repeat this process for a second
 API key and put it where it says "PUT API KEY 2 HERE". It will halve the amount of time it takes to load the information.
 
-Now change the other values in the config.json file. Where it says "Omega Rex", enter your summoner name with quotes around it. You can play around with the scale_factor until you find one that suits your tastes.
+Now change the other values in the config.json file. Where it says "Summoner_Name", enter your summoner name with quotes around it. You can play around with the scale_factor until you find one that suits your tastes.
 *Going under 6 is not
 recommended because it will cause visual clashes!*
 
@@ -141,7 +141,7 @@ around it.
 It is recommended that you use a smurf or create a new League of Legends account and repeat this process for a second
 API key and put it where it says "PUT API KEY 2 HERE". It will halve the amount of time it takes to load the information.
 
-Now change the other values in the config.json file. Where it says "Omega Rex", enter your summoner name with quotes around it. You can play around with the scale_factor until you find one that suits your tastes.
+Now change the other values in the config.json file. Where it says "Summoner_Name", enter your summoner name with quotes around it. You can play around with the scale_factor until you find one that suits your tastes.
 *Going under 6 is not
 recommended because it will cause visual clashes!*
 
