@@ -50,11 +50,7 @@ Make sure you have Python 3.x installed on your computer. The easiest way to che
 
 `python3`
 
-or
-
-`python`
-
-If both say either "command does not exist" or a version lower than 3, install the latest 3.x from
+If it says either "command does not exist" or displays a version lower than 3, install the latest 3.x from
 [here](https://www.python.org/downloads/). *Remember which of the two commands worked, because you will need it later.*
 
 Make sure you have pip by entering the command
@@ -67,13 +63,7 @@ gives you a long list of commands, you have it. If not, follow the instructions 
 Navigate to the DisplayGG folder in Command Prompt (For example, if it is in Downloads/DisplayGG, enter "cd ~/Downloads/DisplayGG"). Now enter the following commands (if it prompts you for
   your password, enter it because it needs admin permissions to install):
 
-`pip3 install psutil`
-
-`pip3 install --upgrade --trusted-host wxpython.org --pre -f http://wxpython.org/Phoenix/snapshot-builds/ wxPython_Phoenix`
-
-`pip3 install appscript`
-
-`pip3 install riotwatcher`
+`pip3 install -r requirements.txt`
 
 
 Go to [League of Legends' developer website](https://developer.riotgames.com/) and sign in with your League of Legends account.
@@ -127,13 +117,7 @@ gives you a long list of commands, you have it. If not, follow the instructions 
 Navigate to the DisplayGG folder in Terminal (For example, if it is in Downloads/DisplayGG, enter "cd ~/Downloads/DisplayGG"). Now enter the following commands (if it prompts you for
   your password, enter it because it needs admin permissions to install):
 
-`sudo pip3 install psutil`
-
-`sudo pip3 install --upgrade --trusted-host wxpython.org --pre -f http://wxpython.org/Phoenix/snapshot-builds/ wxPython_Phoenix`
-
-`sudo pip3 install appscript`
-
-`sudo pip3 install riotwatcher`
+`sudo pip3 install requirements.txt`
 
 
 Go to [League of Legends' developer website](https://developer.riotgames.com/) and sign in with your League of Legends account.
