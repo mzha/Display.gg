@@ -1,7 +1,7 @@
-appscript==1.0.1
-psutil==5.0.0
-requests==2.12.1
-riotwatcher==1.3.2
-six==1.10.0
-virtualenv==15.0.3
-wxPython-Phoenix==3.0.3.dev2700+c524ed1
+appscript>=1.0.1
+psutil>=5.0.0
+requests>=2.12.1
+riotwatcher>=1.3.2
+six>=1.10.0
+virtualenv>=15.0.3
+wxPython-Phoenix>=3.0.3
