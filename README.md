@@ -117,7 +117,7 @@ gives you a long list of commands, you have it. If not, follow the instructions 
 Navigate to the DisplayGG folder in Terminal (For example, if it is in Downloads/DisplayGG, enter "cd ~/Downloads/DisplayGG"). Now enter the following commands (if it prompts you for
   your password, enter it because it needs admin permissions to install):
 
-`sudo pip3 install requirements.txt`
+`sudo pip3 install -r requirements.txt`
 
 
 Go to [League of Legends' developer website](https://developer.riotgames.com/) and sign in with your League of Legends account.
