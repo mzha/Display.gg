@@ -15,7 +15,7 @@
   - [Running](#running-instructions-mac)
 
 ### <a name="what-is-displaygg"></a>What is Display.gg?
-A loading screen display for League of Legends. <font color="red">(CURRENTLY MAC ONLY)</font>
+A loading screen display for League of Legends.
 <img src='http://oi68.tinypic.com/b4yfq9.jpg' alt='Demo'></img>
 ### <a name="more-details"></a>More Details
 <font color="lightblue">Display.gg</font> is a python script that you keep running on your computer. It detects when you are loading into a game and pulls up the game's details.
@@ -41,7 +41,7 @@ champion, while ***NOOB*** means they have played less than **2.5%** of their ra
 Tilt factor measures the player's tilt on a scale from **0.0** (not tilted) to **10.0** (extremely tilted).
 It is calculated by an algorithm that analyzes their record from the past **10** matched games.
 
-## <a name="windows"></a> Windows Instructions
+## <a name="windows"></a> Windows Instructions (WARNING: not extensively tested)
 
 ### <a name="installation-instructions-windows"></a>Installing
 Download and unzip the ZIP file or clone the project into a directory of your choice. Rename the folder to "DisplayGG" or whatever name you want.
