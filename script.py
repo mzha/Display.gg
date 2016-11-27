@@ -88,7 +88,7 @@ keystones = [
   "Thunderlord's Decree",
   "Windspeaker's Blessing",
   "Grasp of the Undying",
-  "Strength of the Ages",
+  "Courage of the Colossus",
   "Bond of Stone"
 ]
 
