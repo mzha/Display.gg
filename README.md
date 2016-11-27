@@ -73,6 +73,9 @@ Navigate to the DisplayGG folder in Command Prompt (For example, if it is in Dow
 
 `pip3 install appscript`
 
+`pip3 install riotwatcher`
+
+
 Go to [League of Legends' developer website](https://developer.riotgames.com/) and sign in with your League of Legends account.
 
 Follow the on-screen instructions
@@ -129,6 +132,9 @@ Navigate to the DisplayGG folder in Terminal (For example, if it is in Downloads
 `sudo pip3 install --upgrade --trusted-host wxpython.org --pre -f http://wxpython.org/Phoenix/snapshot-builds/ wxPython_Phoenix`
 
 `sudo pip3 install appscript`
+
+`sudo pip3 install riotwatcher`
+
 
 Go to [League of Legends' developer website](https://developer.riotgames.com/) and sign in with your League of Legends account.
 
