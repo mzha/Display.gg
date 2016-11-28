@@ -31,15 +31,15 @@ A loading screen display for League of Legends.
 - Win Rate on champion
 - Ranked games on champion
 - Player skill on champion
-- Tilt factor (Tilt)
+- Carry Factor (CF)
 
-### <a name="player-skill-tilt-factor"></a>Player skill? Tilt factor?
+### <a name="player-skill-tilt-factor"></a>Player skill? Carry factor?
 Player skill is split into three categories: ***ONE TRICK***, ***NOOB***, and ***NORMAL***. If there is nothing on top of the summoner
 name, their skill level is ***NORMAL***. ***ONE TRICK*** means they have played at least **50%** of their ranked games with that
 champion, while ***NOOB*** means they have played less than **2.5%** of their ranked games with that champion.
 
-Tilt factor measures the player's tilt on a scale from **0.0** (not tilted) to **10.0** (extremely tilted).
-It is calculated by an algorithm that analyzes their record from the past **10** matched games.
+Carry factor measures the player's likeliness on a scale from **0.0** (not likely) to **10.0** (extremely likely).
+It is calculated by an algorithm that analyzes their win/loss record from the past **10** matched games.
 
 ## <a name="windows"></a> Windows Instructions (WARNING: not extensively tested)
 
