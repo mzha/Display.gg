@@ -3,6 +3,7 @@
     "wrap_width": 20,
     "left_padding": 10,
     "gap": 5,
+    "url": "http://displaygg.azurewebsites.net",
     "colors":
         {
             "text_color": "#3B3B3B",

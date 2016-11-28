@@ -13,6 +13,9 @@ name = config['summoner_name']
 #Summoner region constant
 region = config['region']
 
+#Data URL constant
+dataUrl = constants['url']
+
 #Windows or Mac
 osValue = 0
 
@@ -58,7 +61,7 @@ lightRed = constants['colors']['light_red']
 
 #sets to correct version of league
 payload = {'region': region}
-cdnVersion = requests.get('http://localhost:3000/static_get_versions', params=payload).json()[0];
+cdnVersion = requests.get(dataUrl + '/static_get_versions', params=payload).json()[0];
 
 #keystones defined
 keystones = [
@@ -146,7 +149,7 @@ runes = {
 def isOneTrick(player):
     try:
         payload = {'summonerid': player['summonerId'], 'region': region}
-        stats = requests.get('http://localhost:3000/ranked_stats', params=payload).json();
+        stats = requests.get(dataUrl + '/ranked_stats', params=payload).json();
     except:
         return (-1, 0.0, 0.0, 0.0, 0, 0.0)
     allIndex = -1
@@ -190,7 +193,7 @@ def getRanks(players):
     for i in range(0, len(players)):
         ids.append(players[i]['summonerId'])
     payload = {'summonerids': ids, 'region': region}
-    rankList = requests.get('http://localhost:3000/ranks', params=payload).json()
+    rankList = requests.get(dataUrl + '/ranks', params=payload).json()
     values = []
     for i in range(0, len(players)):
         if not str(players[i]['summonerId']) in rankList:
@@ -211,7 +214,7 @@ def getRunes(player):
     currentStats = {}
     for i in range(0, len(player['runes'])):
         payload = {'runeid': player['runes'][i]['runeId']}
-        rune = requests.get('http://localhost:3000/static_get_rune', params=payload).json()
+        rune = requests.get(dataUrl + '/static_get_rune', params=payload).json()
         count = player['runes'][i]['count']
         stats = rune['stats']
         for key in stats:
@@ -233,7 +236,7 @@ def getRunes(player):
 #Returns a tuple of (summonerName, tiltFactor, championImage, summonerSpell1Image, summonerSpell2Image, keystoneImage)
 def getPlayer(player):
     payload = {'summonerid': player['summonerId'], 'region': region}
-    games = requests.get('http://localhost:3000/recent_games', params=payload).json()
+    games = requests.get(dataUrl + '/recent_games', params=payload).json()
     tiltFactor = 0.0
     wasGame = False
     for i in range(0, len(games)):
@@ -248,15 +251,15 @@ def getPlayer(player):
     else:
         tiltFactor = str(tiltFactor)
     payload = {'champid': player['championId']}
-    champion = requests.get('http://localhost:3000/static_get_champion', params=payload).json()
+    champion = requests.get(dataUrl + '/static_get_champion', params=payload).json()
     payload = {'spellid': player['spell1Id']}
-    sum1 = requests.get('http://localhost:3000/static_get_summoner_spell', params=payload).json()
+    sum1 = requests.get(dataUrl + '/static_get_summoner_spell', params=payload).json()
     payload = {'spellid': player['spell2Id']}
-    sum2 = requests.get('http://localhost:3000/static_get_summoner_spell', params=payload).json()
+    sum2 = requests.get(dataUrl + '/static_get_summoner_spell', params=payload).json()
     keystone = ""
     for i in range(0, len(player['masteries'])):
         payload = {'masteryid': player['masteries'][i]['masteryId']}
-        temp = requests.get('http://localhost:3000/static_get_mastery', params=payload).json()
+        temp = requests.get(dataUrl + '/static_get_mastery', params=payload).json()
         if temp['name'] in keystones:
             keystone = temp['image']['full']
             break
@@ -304,7 +307,7 @@ class RuneFrame(wx.Frame):
 class MainFrame(wx.Frame):
     def __init__(self):
         payload = {'summoner': name, 'region': region}
-        game = requests.get('http://localhost:3000/', params=payload).json();
+        game = requests.get(dataUrl + '/', params=payload).json();
         style = ( wx.CLIP_CHILDREN | wx.FRAME_NO_TASKBAR |
                   wx.RAISED_BORDER | wx.FRAME_SHAPED  )
         panelStyle = (wx.SUNKEN_BORDER)
