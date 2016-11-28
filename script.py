@@ -1,6 +1,5 @@
-import psutil, sys, wx, urllib.request,time, json, appscript
+import psutil, sys, wx, urllib.request,time, json, appscript, requests
 import io
-from riotwatcher import RiotWatcher, NORTH_AMERICA
 
 with open('config.json') as config_file:
     config = json.load(config_file)
@@ -10,6 +9,9 @@ with open('constants.json') as constants_file:
 
 #Summoner name constant
 name = config['summoner_name']
+
+#Summoner region constant
+region = config['region']
 
 #Windows or Mac
 osValue = 0
@@ -54,30 +56,9 @@ lightBlue = constants['colors']['light_blue']
 lighterRed = constants['colors']['lighter_red']
 lightRed = constants['colors']['light_red']
 
-#Three API keys = thrice the calls before rate limit
-order = []
-if len(config['api_key_1']) > 0:
-    watcher1 = RiotWatcher(config['api_key_1'], default_region=NORTH_AMERICA)
-    order.append(watcher1)
-if len(config['api_key_2']) > 0:
-    watcher2 = RiotWatcher(config['api_key_2'], default_region=NORTH_AMERICA)
-    order.append(watcher2)
-if len(config['api_key_3']) > 0:
-    watcher3 = RiotWatcher(config['api_key_3'], default_region=NORTH_AMERICA)
-    order.append(watcher3)
-
-#Finds out which API key is usable
-def getWatcher():
-    temp = order.pop(0)
-    order.append(temp)
-    try:
-        temp.get_summoner(name)
-        return temp
-    except:
-        time.sleep(1)
-        return getWatcher()
 #sets to correct version of league
-cdnVersion = watcher1.static_get_versions()[0]
+payload = {'region': region}
+cdnVersion = requests.get('http://localhost:3000/static_get_versions', params=payload).json()[0];
 
 #keystones defined
 keystones = [
@@ -161,15 +142,11 @@ runes = {
     "rPercentTimeDeadModPerLevel": ["-", "%" + " time spent dead at level 18", 1800]
 }
 
-
-me = watcher1.get_summoner(name=name)
-my_id = me['id']
-
 #Returns an array [val, k, d, a, gamesPlayed, winRate] where val is -1 (scrub), 0 (normal), or 1 (one trick)
 def isOneTrick(player):
-    watcher = getWatcher()
     try:
-        stats = watcher.get_ranked_stats(player['summonerId'])['champions']
+        payload = {'summonerid': player['summonerId'], 'region': region}
+        stats = requests.get('http://localhost:3000/ranked_stats', params=payload).json();
     except:
         return (-1, 0.0, 0.0, 0.0, 0, 0.0)
     allIndex = -1
@@ -209,11 +186,11 @@ def isOneTrick(player):
 
 #Returns an array of strings that are the player's ranks
 def getRanks(players):
-    watcher = getWatcher()
     ids = []
     for i in range(0, len(players)):
         ids.append(players[i]['summonerId'])
-    rankList = watcher.get_league(ids)
+    payload = {'summonerids': ids, 'region': region}
+    rankList = requests.get('http://localhost:3000/ranks', params=payload).json()
     values = []
     for i in range(0, len(players)):
         if not str(players[i]['summonerId']) in rankList:
@@ -231,10 +208,10 @@ def getRanks(players):
 
 #Returns stats of the rune page of the player
 def getRunes(player):
-    watcher = getWatcher()
     currentStats = {}
     for i in range(0, len(player['runes'])):
-        rune = watcher.static_get_rune(player['runes'][i]['runeId'], rune_data='stats')
+        payload = {'runeid': player['runes'][i]['runeId']}
+        rune = requests.get('http://localhost:3000/static_get_rune', params=payload).json()
         count = player['runes'][i]['count']
         stats = rune['stats']
         for key in stats:
@@ -255,8 +232,8 @@ def getRunes(player):
 
 #Returns a tuple of (summonerName, tiltFactor, championImage, summonerSpell1Image, summonerSpell2Image, keystoneImage)
 def getPlayer(player):
-    watcher = getWatcher()
-    games = watcher.get_recent_games(player['summonerId'])['games']
+    payload = {'summonerid': player['summonerId'], 'region': region}
+    games = requests.get('http://localhost:3000/recent_games', params=payload).json()
     tiltFactor = 0.0
     wasGame = False
     for i in range(0, len(games)):
@@ -270,12 +247,16 @@ def getPlayer(player):
         tiltFactor = "Unknown"
     else:
         tiltFactor = str(tiltFactor)
-    champion = watcher.static_get_champion(player['championId'], champ_data='image')
-    sum1 = watcher.static_get_summoner_spell(player['spell1Id'], spell_data='image')
-    sum2 = watcher.static_get_summoner_spell(player['spell2Id'], spell_data='image')
+    payload = {'champid': player['championId']}
+    champion = requests.get('http://localhost:3000/static_get_champion', params=payload).json()
+    payload = {'spellid': player['spell1Id']}
+    sum1 = requests.get('http://localhost:3000/static_get_summoner_spell', params=payload).json()
+    payload = {'spellid': player['spell2Id']}
+    sum2 = requests.get('http://localhost:3000/static_get_summoner_spell', params=payload).json()
     keystone = ""
     for i in range(0, len(player['masteries'])):
-        temp = watcher.static_get_mastery(player['masteries'][i]['masteryId'], mastery_data='image')
+        payload = {'masteryid': player['masteries'][i]['masteryId']}
+        temp = requests.get('http://localhost:3000/static_get_mastery', params=payload).json()
         if temp['name'] in keystones:
             keystone = temp['image']['full']
             break
@@ -322,7 +303,8 @@ class RuneFrame(wx.Frame):
 #The display itself
 class MainFrame(wx.Frame):
     def __init__(self):
-        game = watcher1.get_current_game(my_id)
+        payload = {'summoner': name, 'region': region}
+        game = requests.get('http://localhost:3000/', params=payload).json();
         style = ( wx.CLIP_CHILDREN | wx.FRAME_NO_TASKBAR |
                   wx.RAISED_BORDER | wx.FRAME_SHAPED  )
         panelStyle = (wx.SUNKEN_BORDER)
@@ -338,7 +320,7 @@ class MainFrame(wx.Frame):
         #Get game mode
         gameMode = game['gameMode']
         try:
-            if game['gameQueueConfigId'] in [4, 6, 9, 41, 42, 410]:
+            if game['gameQueueConfigId'] in [4, 6, 9, 41, 42, 410, 420, 440]:
                 gameMode = "RANKED"
         except:
             pass

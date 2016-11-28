@@ -1,7 +1,5 @@
 {
-    "summoner_name": "Summoner_Name",
+    "summoner_name": "Dyrus",
     "scale_factor": 6,
-    "api_key_1": "PUT API KEY 1 HERE",
-    "api_key_2": "PUT API KEY 2 HERE",
-    "api_key_3": "PUT API KEY 3 HERE"
+    "region": "na"
 }
