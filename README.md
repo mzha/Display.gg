@@ -82,6 +82,7 @@ For region, valid values are:
 - tr (Turkish)
 - ru (Russia)
 - pbe (Public Beta Environment)
+
 *Make sure there are quotes around it. Do not enter the text in parentheses!*
 
 
@@ -140,6 +141,7 @@ For region, valid values are:
 - tr (Turkish)
 - ru (Russia)
 - pbe (Public Beta Environment)
+
 *Make sure there are quotes around it. Do not enter the text in parentheses!*
 
 <font color="blue">**Congratulations! Display.gg is installed!**</font>
