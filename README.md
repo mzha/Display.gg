@@ -66,20 +66,24 @@ Navigate to the DisplayGG folder in Command Prompt (For example, if it is in Dow
 `pip3 install -r requirements.txt`
 
 
-Go to [League of Legends' developer website](https://developer.riotgames.com/) and sign in with your League of Legends account.
-
-Follow the on-screen instructions
-until you reach a screen that displays your "Development API Key". It will be a line of numbers, letters, and dashes.
-
-Copy that line and put it into the config.json file, where it says "PUT API KEY 1 HERE". Make sure there are quotes
-around it.
-
-It is recommended that you use a smurf or create a new League of Legends account and repeat this process for a second
-API key and put it where it says "PUT API KEY 2 HERE". It will halve the amount of time it takes to load the information.
-
-Now change the other values in the config.json file. Where it says "Summoner_Name", enter your summoner name with quotes around it. You can play around with the scale_factor until you find one that suits your tastes.
+Change the values in the config.json file. Where it says "Summoner_Name", enter your summoner name with quotes around it.
+You can play around with the scale_factor until you find one that suits your tastes.
 *Going under 6 is not
 recommended because it will cause visual clashes!*
+For region, valid values are:
+- br (Brazil)
+- eune (Europe North-East)
+- euw (Europe West)
+- kr (Korean)
+- lan (Latin America North)
+- las (Latin America South)
+- na (North America)
+- oce (Oceania)
+- tr (Turkish)
+- ru (Russia)
+- pbe (Public Beta Environment)
+*Make sure there are quotes around it. Do not enter the text in parentheses!*
+
 
 <font color="blue">**Congratulations! Display.gg is installed!**</font>
 ### <a name="running-instructions-windows"></a>Running
@@ -120,20 +124,23 @@ Navigate to the DisplayGG folder in Terminal (For example, if it is in Downloads
 `sudo pip3 install -r requirements.txt`
 
 
-Go to [League of Legends' developer website](https://developer.riotgames.com/) and sign in with your League of Legends account.
-
-Follow the on-screen instructions
-until you reach a screen that displays your "Development API Key". It will be a line of numbers, letters, and dashes.
-
-Copy that line and put it into the config.json file, where it says "PUT API KEY 1 HERE". Make sure there are quotes
-around it.
-
-It is recommended that you use a smurf or create a new League of Legends account and repeat this process for a second
-API key and put it where it says "PUT API KEY 2 HERE". It will halve the amount of time it takes to load the information.
-
-Now change the other values in the config.json file. Where it says "Summoner_Name", enter your summoner name with quotes around it. You can play around with the scale_factor until you find one that suits your tastes.
+Change the values in the config.json file. Where it says "Summoner_Name", enter your summoner name with quotes around it.
+You can play around with the scale_factor until you find one that suits your tastes.
 *Going under 6 is not
 recommended because it will cause visual clashes!*
+For region, valid values are:
+- br (Brazil)
+- eune (Europe North-East)
+- euw (Europe West)
+- kr (Korean)
+- lan (Latin America North)
+- las (Latin America South)
+- na (North America)
+- oce (Oceania)
+- tr (Turkish)
+- ru (Russia)
+- pbe (Public Beta Environment)
+*Make sure there are quotes around it. Do not enter the text in parentheses!*
 
 <font color="blue">**Congratulations! Display.gg is installed!**</font>
 ### <a name="running-instructions-mac"></a>Running
