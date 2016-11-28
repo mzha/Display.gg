@@ -70,6 +70,7 @@ Change the values in the config.json file. Where it says "Summoner_Name", enter 
 You can play around with the scale_factor until you find one that suits your tastes.
 *Going under 6 is not
 recommended because it will cause visual clashes!*
+
 For region, valid values are:
 - br (Brazil)
 - eune (Europe North-East)
@@ -129,6 +130,7 @@ Change the values in the config.json file. Where it says "Summoner_Name", enter 
 You can play around with the scale_factor until you find one that suits your tastes.
 *Going under 6 is not
 recommended because it will cause visual clashes!*
+
 For region, valid values are:
 - br (Brazil)
 - eune (Europe North-East)
