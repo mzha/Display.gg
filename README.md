@@ -6,7 +6,7 @@
   - [What is Display.gg?](#what-is-displaygg)
   - [More Details](#more-details)
   - [Information Displayed](#information-displayed)
-  - [Player skill? Tilt factor?](#player-skill-tilt-factor)
+  - [Player skill? Carry factor?](#player-skill-carry-factor)
 - [Windows Instructions](#windows)
   - [Installation](#installation-instructions-windows)
   - [Running](#running-instructions-windows)
@@ -33,7 +33,7 @@ A loading screen display for League of Legends.
 - Player skill on champion
 - Carry Factor (CF)
 
-### <a name="player-skill-tilt-factor"></a>Player skill? Carry factor?
+### <a name="player-skill-carry-factor"></a>Player skill? Carry factor?
 Player skill is split into three categories: ***ONE TRICK***, ***NOOB***, and ***NORMAL***. If there is nothing on top of the summoner
 name, their skill level is ***NORMAL***. ***ONE TRICK*** means they have played at least **50%** of their ranked games with that
 champion, while ***NOOB*** means they have played less than **2.5%** of their ranked games with that champion.
