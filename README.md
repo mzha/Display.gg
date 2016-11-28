@@ -16,7 +16,7 @@
 
 ### <a name="what-is-displaygg"></a>What is Display.gg?
 A loading screen display for League of Legends.
-<img src='http://oi68.tinypic.com/b4yfq9.jpg' alt='Demo'></img>
+<img src='http://oi63.tinypic.com/2lxz3vb.jpg' alt='Demo'></img>
 ### <a name="more-details"></a>More Details
 <font color="lightblue">Display.gg</font> is a python script that you keep running on your computer. It detects when you are loading into a game and pulls up the game's details.
 ### <a name="information-displayed"></a>Information Displayed

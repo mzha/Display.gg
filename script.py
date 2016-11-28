@@ -233,23 +233,23 @@ def getRunes(player):
         returnArray.append(string)
     return returnArray
 
-#Returns a tuple of (summonerName, tiltFactor, championImage, summonerSpell1Image, summonerSpell2Image, keystoneImage)
+#Returns a tuple of (summonerName, carryFactor, championImage, summonerSpell1Image, summonerSpell2Image, keystoneImage)
 def getPlayer(player):
     payload = {'summonerid': player['summonerId'], 'region': region}
     games = requests.get(dataUrl + '/recent_games', params=payload).json()
-    tiltFactor = 0.0
+    carryFactor = 0.0
     wasGame = False
     for i in range(0, len(games)):
         if games[i]['gameType'] == 'MATCHED_GAME':
             wasGame = True
-            if not games[i]['stats']['win'] :
-                tiltFactor += 10 - i
-    tiltFactor *= 10.0 / 55
-    tiltFactor = int((tiltFactor * 10) + 0.5) / 10.0
+            if games[i]['stats']['win'] :
+                carryFactor += 10 - i
+    carryFactor *= 10.0 / 55
+    carryFactor = int((carryFactor * 10) + 0.5) / 10.0
     if not wasGame:
-        tiltFactor = "Unknown"
+        carryFactor = "Unknown"
     else:
-        tiltFactor = str(tiltFactor)
+        carryFactor = str(carryFactor)
     payload = {'champid': player['championId']}
     champion = requests.get(dataUrl + '/static_get_champion', params=payload).json()
     payload = {'spellid': player['spell1Id']}
@@ -263,7 +263,7 @@ def getPlayer(player):
         if temp['name'] in keystones:
             keystone = temp['image']['full']
             break
-    return (player['summonerName'], tiltFactor,
+    return (player['summonerName'], carryFactor,
     champion['image']['full'], sum1['image']['full'], sum2['image']['full'], keystone)
 
 #Parses url and returns image
@@ -381,7 +381,7 @@ class MainFrame(wx.Frame):
             gamesPlayedText.SetForegroundColour(lighterTextColor)
 
             #Tilt factor
-            winrateText = wx.StaticText(tempPanel, label="Tilt: " + winrate,
+            winrateText = wx.StaticText(tempPanel, label="CF: " + winrate,
                 pos= (width / 2 - 90, (height / 7 - 20) / 2))
             winrateText.SetFont(font)
             winrateText.SetForegroundColour(lighterTextColor)
