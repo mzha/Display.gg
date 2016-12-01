@@ -13,6 +13,7 @@
 - [Mac Instructions](#mac)
   - [Installation](#installation-instructions-mac)
   - [Running](#running-instructions-mac)
+- [Statement](#statement)
 
 ### <a name="what-is-displaygg"></a>What is Display.gg?
 A loading screen display for League of Legends.
@@ -157,3 +158,6 @@ You can put a summoner name in double-quotes afterwards if you want the program 
 `python3 script.py 1 "SUMMONERNAME"`
 
 Now the program is running and will automatically open when you load into game. You can exit the program from the Terminal window by pressing Ctrl-C.
+
+### <a name="statement"></a>Statement
+Display.gg isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
