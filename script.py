@@ -7,6 +7,11 @@ with open('config.json') as config_file:
 with open('constants.json') as constants_file:
     constants = json.load(constants_file)
 
+#wx variables
+exists = False
+f = None
+app = wx.App()
+
 #Summoner name constant
 name = config['summoner_name']
 
@@ -354,13 +359,13 @@ class MainFrame(wx.Frame):
             rankText.SetFont(miniFont)
             rankText.SetForegroundColour(textColor)
 
-            #One trick, noob, or normal
+            #One trick, new, or normal
             stats = isOneTrick(game['participants'][i])
             description = ""
             if stats[0] == 1:
                 description = "ONE TRICK"
             elif stats[0] == -1:
-                description = "NOOB"
+                description = "NEW"
             descriptionText = wx.StaticText(tempPanel, label=description,
              pos= (leftPadding + championImageSize + sumImageSize + keystoneImageSize + gap * 3, (height / 7 - 45) / 2))
             descriptionText.SetFont(miniBoldFont)
@@ -434,6 +439,8 @@ class MainFrame(wx.Frame):
             appscript.app(pid=processId).activate()
 
     def close(self, event):
+        global exists
+        exists = False
         self.Close()
 
     #Draw background image
@@ -451,13 +458,8 @@ class MainFrame(wx.Frame):
 #Name of process to open the display for
 processName = constants['process_name']
 
-exists = False
-f = None
-app = wx.App()
-
 #Loop logic: scans every 2 seconds if League is running
 while True:
-    thisCycle = False
     for proc in psutil.process_iter():
         try:
             pinfo = proc.as_dict(attrs=['name'])['name']
@@ -467,16 +469,12 @@ while True:
                 except:
                     pass
             if processName == pinfo:
-                thisCycle = True
                 if not exists:
+                    exists = True
                     timeTaken = int(round(time.time() * 1000))
                     f = MainFrame()
                     app.MainLoop()
-                exists = True
         except psutil.NoSuchProcess:
             pass
-    if not thisCycle and exists:
-        exists = False
-        f.Close()
 
     time.sleep(2)

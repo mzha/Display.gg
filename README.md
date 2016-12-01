@@ -35,9 +35,9 @@ A loading screen display for League of Legends.
 - Carry Factor (CF)
 
 ### <a name="player-skill-carry-factor"></a>Player skill? Carry factor?
-Player skill is split into three categories: ***ONE TRICK***, ***NOOB***, and ***NORMAL***. If there is nothing on top of the summoner
+Player skill is split into three categories: ***ONE TRICK***, ***NEW***, and ***NORMAL***. If there is nothing on top of the summoner
 name, their skill level is ***NORMAL***. ***ONE TRICK*** means they have played at least **50%** of their ranked games with that
-champion, while ***NOOB*** means they have played less than **2.5%** of their ranked games with that champion.
+champion, while ***NEW*** means they have played less than **2.5%** of their ranked games with that champion.
 
 Carry factor measures the player's likeliness to carry on a scale from **0.0** (not likely) to **10.0** (extremely likely).
 It is calculated by an algorithm that analyzes their win/loss record from the past **10** matched games.
